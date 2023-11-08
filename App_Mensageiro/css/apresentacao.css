@@ -1,0 +1,214 @@
+/*Css da apresentação*/
+
+body {
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000 !important;
+}
+
+
+/*carousel ocultado, a visibilidade e trabalhada no js*/
+
+section#sliderprod {
+    display: none;
+}
+
+
+/*estilo da texto que fica correndo na apresentação*/
+
+marquee {
+    font-size: 8vh;
+    font-weight: 800;
+    color: white;
+    font-family: sans-serif;
+    position: absolute;
+    width: 100%;
+    margin-top: 0%;
+    z-index: 5;
+}
+
+div#apresentacao {
+    margin-bottom: 1vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.marquee {
+    width: 100% !important;
+    margin-left: 0% !important;
+}
+
+
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+        /* posição inicial */
+    }
+
+    50% {
+        transform: translateY(-20px);
+        /* posição intermediária */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* posição final */
+    }
+}
+
+/* Aplicando a animação à tag <marquee> */
+marquee {
+    animation: jump 2s infinite;
+    /* duração da animação e repetições */
+}
+
+
+.aviso {
+    margin-top: 20vh;
+    margin-left: 22%;
+    color: #fff;
+    margin-bottom: 12vh;
+}
+
+.mensagem {
+    color: #fff;
+    margin-left: 10%;
+    margin-top: 9%;
+}
+
+.tb_dados {
+    margin-top: 5vh;
+}
+
+.id_span {
+    font-size: 1.5em;
+}
+
+.ajuste_de_espaço {
+    width: 5vh;
+}
+
+.remetente {
+    margin-right: 5%;
+    font-size: 2em;
+}
+
+.curso_remetente {
+    font-size: 2em;
+}
+
+.destinatario {
+    margin-right: 5%;
+    font-size: 2em;
+}
+
+.curso_destinatario {
+    font-size: 2em;
+}
+
+.td_remetente {
+    width: 20em;
+}
+
+.td_destinatario {
+    width: 30em;
+}
+
+.tr_ajuste_msg {
+    height: 8vh;
+}
+
+.msg {
+    font-size: 1.5em;
+}
+
+.video-screen {
+    width: 100%;
+}
+
+.carousel-control-next-icon {
+    display: none !important;
+}
+
+.carousel-control-prev-icon {
+    display: none !important;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1399px) {
+    .tipo_amorosa {
+        background-size: 1364px !important;
+    }
+
+    .tipo_alegre {
+        background-size: 1364px !important;
+    }
+
+    .tipo_aviso {
+        background-size: 1364px !important;
+    }
+
+    .tipo_normal {
+        background-size: 1364px !important;
+    }
+}
+
+
+/*para resoluções maiores*/
+
+@media screen and (min-width: 1400px) and (max-width: 2500px) {
+    .apresentacao {
+        background: url("../img/tema-defalt.png") no-repeat;
+        margin-bottom: 1vh;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .aviso {
+        margin-top: 22vh !important;
+        font-size: 1.5em;
+    }
+
+    .remetente {
+        margin-right: 5%;
+        font-size: 3em;
+    }
+
+    .curso_remetente {
+        font-size: 3em;
+    }
+
+    .destinatario {
+        margin-right: 5%;
+        font-size: 3em;
+    }
+
+    .curso_destinatario {
+        font-size: 3em;
+    }
+
+    .msg {
+        font-size: 2em;
+    }
+}
+
+
+/*Apagar aqui se não for utilizado multiplos estilos*/
+
+.tipo_amorosa {
+    background: url("../img/tema-amoroso.png") no-repeat;
+}
+
+.tipo_alegre {
+    background: url("../img/tema-alegre.png") no-repeat;
+}
+
+.tipo_aviso {
+    background: url("../img/tema-aviso.png") no-repeat;
+}
+
+.tipo_normal {
+    background: url("../img/tema-defalt.png") no-repeat;
+}

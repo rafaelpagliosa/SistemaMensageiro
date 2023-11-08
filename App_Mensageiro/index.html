@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
+        rel="stylesheet">
+    <!--link rel="icon" href="img/POMBO.png" type="image/x-icon" /-->
+
+    <!-- importação dos estilos utilizados na pagina principal-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <title>Mensageiro</title>
+</head>
+
+<body>
+    <header>
+        <div class="div">
+            <h1 class="h1_titulo">Sistema Mensageiro</h1>
+        </div>
+    </header>
+    <main>
+
+        <!-- Botoes de direcionamento-->
+        <table>
+            <tr>
+                <td><button type="button" class="button blue mobile btngrande" id="cadastrarCliente">Cadastrar
+                        Mensagem</button>
+                </td>
+                <td><a href="apresentacao.html"><button type="button" class="button blue mobile btngrande"
+                            id="Apresentar">Apresentação</button></a></td>
+            </tr>
+        </table>
+
+        <!-- essa é a tebela que é criada através do javascritp no main.js-->
+        <table id="example" class="display tb_example" width="100%"></table>
+
+        <!-- modal de cadastro de mensagens -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Nova Mensagem</h2>
+                    <div class="modal-close" id="" onclick="fechaModal()">X</div>
+                </header>
+                <form id="form" class="modal-form">
+
+                    <input type="text" id="remetente" class="modal-field" placeholder="Remetente" required>
+
+
+                    <!-- caso seja necessário criar mais alguma forma de remetente cria em options e colocar o value como o nome a ser exibido na apresentação -->
+                    <select name="curso_remetente" id="curso_remetente" class="modal-field" required>
+                        <option value="nd" disabled selected>Selecione o Curso do Remetente</option>
+                        <option value="Administração">Administração</option>
+                        <option value="Agronomia">Agronomia</option>
+                        <option value="Artes Visuais">Artes Visuais</option>
+                        <option value="Ciências Biológicas">Ciências Biológicas</option>
+                        <option value="Ciências Contábeis">Ciências Contábeis</option>
+                        <option value="Direito">Direito</option>
+                        <option value="Educação Física">Educação Física</option>
+                        <option value="Enfermagem">Enfermagem</option>
+                        <option value="Farmácia">Farmácia</option>
+                        <option value="Letras">Letras</option>
+                        <option value="Química">Química</option>
+                        <option value="Pedagogia">Pedagogia</option>
+                        <option value="Sistemas de Informação">Sistemas de Informação</option>
+                        <option value="Técnico em Alimentos">Técnico em Alimentos</option>
+                        <option value="Técnico em Serviços Jurídicos">Técnico em Serviços Jurídicos</option>
+                        <option value="Pós-Graduação em Linguagens Híbridas">Pós-Graduação em Linguagens Híbridas
+                        </option>
+                        <option value="Pós-Graduação em Controladoria">Pós-Graduação em Controladoria e Gestão
+                            Empresarial</option>
+                        <option value="IFPR">IFPR</option>
+                        <option value="Professor(a)">Professor(a)</option>
+                        <option value="Servidor(a)">Servidor(a)</option>
+                        <option value="Colegiado">Colegiado</option>
+                        <option value="Visitantes">Visitantes</option>
+                        <option value="Outros">Outros</option>
+                        <option value="*">*</option>
+                    </select>
+
+
+                    <input type="text" id="destinatario" class="modal-field" placeholder="Destinatário" required>
+
+                    <!-- caso seja necessário criar mais alguma forma de destinatario cria em options e colocar o value como o nome a ser exibido na apresentação -->
+                    <select name="curso_destinatario" id="curso_destinatario" class="modal-field" required>
+                        <option value="nd" disabled selected>Selecione o Curso do Destinatário</option>
+                        <option value="Administração">Administração</option>
+                        <option value="Agronomia">Agronomia</option>
+                        <option value="Artes Visuais">Artes Visuais</option>
+                        <option value="Ciências Biológicas">Ciências Biológicas</option>
+                        <option value="Ciências Contábeis">Ciências Contábeis</option>
+                        <option value="Direito">Direito</option>
+                        <option value="Educação Física">Educação Física</option>
+                        <option value="Enfermagem">Enfermagem</option>
+                        <option value="Farmácia">Farmácia</option>
+                        <option value="Letras">Letras</option>
+                        <option value="Química">Química</option>
+                        <option value="Pedagogia">Pedagogia</option>
+                        <option value="Sistemas de Informação">Sistemas de Informação</option>
+                        <option value="Técnico em Alimentos">Técnico em Alimentos</option>
+                        <option value="Técnico em Serviços Jurídicos">Técnico em Serviços Jurídicos</option>
+                        <option value="Pós-Graduação em Linguagens Híbridas">Pós-Graduação em Linguagens Híbridas
+                        </option>
+                        <option value="Pós-Graduação em Controladoria">Pós-Graduação em Controladoria e Gestão
+                            Empresarial</option>
+                        <option value="IFPR">IFPR</option>
+                        <option value="Professor(a)">Professor(a)</option>
+                        <option value="Servidor(a)">Servidor(a)</option>
+                        <option value="Colegiado">Colegiado</option>
+                        <option value="Visitantes">Visitantes</option>
+                        <option value="Outros">Outros</option>
+                        <option value="*">*</option>
+                    </select>
+
+                    <div></div>
+
+                    <select name="tipo" id="tipo" class="modal-field">
+                        <option value="nd" disabled selected>Selecione o Tipo</option>
+                        <option value="normal">Normal</option>
+                        <option value="alegre">Alegre</option>
+                        <option value="amorosa">Amorosa</option>
+                        <option value="aviso">Aviso</option>
+                    </select>
+
+
+
+
+                    <textarea id="msg" name="msg" class="modal-field msg_campo" placeholder="Digite sua mensagem..."
+                        rows="5" cols="33" onblur="validaMsg()"></textarea>
+                </form>
+                <div class="aviso_de_mensagem">
+                    <p>* Seja conciente, não nos responsabilizamos pelas mensagem enviadas.</p>
+                </div>
+                <footer class="modal-footer">
+                    <button id="salvar" class="button green" onclick="salvar()">Salvar</button>
+                    <button id="cancelar" class="button red" onclick="fechaModal()">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+
+
+        <!--Modal Edit-->
+        <div class="modal" id="modaledit">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Editar Mensagem: </h2> <p> - </p> <p id="idmsg">-</p>
+                    <div class="modal-close" id="" onclick="fechaModalEdit()">X</div>
+                </header>
+                <form id="form" class="modal-form">
+
+                    <input type="text" id="remetente_edit" class="modal-field" placeholder="Remetente" required>
+
+
+                    <!-- caso seja necessário criar mais alguma forma de remetente cria em options e colocar o value como o nome a ser exibido na apresentação -->
+                    <select name="curso_remetente" id="curso_remetente_edit" class="modal-field" required>
+                        <option value="nd" disabled selected>Selecione o Curso do Remetente</option>
+                        <option value="Administração">Administração</option>
+                        <option value="Agronomia">Agronomia</option>
+                        <option value="Artes Visuais">Artes Visuais</option>
+                        <option value="Ciências Biológicas">Ciências Biológicas</option>
+                        <option value="Ciências Contábeis">Ciências Contábeis</option>
+                        <option value="Direito">Direito</option>
+                        <option value="Educação Física">Educação Física</option>
+                        <option value="Enfermagem">Enfermagem</option>
+                        <option value="Farmácia">Farmácia</option>
+                        <option value="Letras">Letras</option>
+                        <option value="Química">Química</option>
+                        <option value="Pedagogia">Pedagogia</option>
+                        <option value="Sistemas de Informação">Sistemas de Informação</option>
+                        <option value="Técnico em Alimentos">Técnico em Alimentos</option>
+                        <option value="Técnico em Serviços Jurídicos">Técnico em Serviços Jurídicos</option>
+                        <option value="Pós-Graduação em Linguagens Híbridas">Pós-Graduação em Linguagens Híbridas
+                        </option>
+                        <option value="Pós-Graduação em Controladoria">Pós-Graduação em Controladoria e Gestão
+                            Empresarial</option>
+                        <option value="IFPR">IFPR</option>
+                        <option value="Professor(a)">Professor(a)</option>
+                        <option value="Servidor(a)">Servidor(a)</option>
+                        <option value="Colegiado">Colegiado</option>
+                        <option value="Visitantes">Visitantes</option>
+                        <option value="Outros">Outros</option>
+                        <option value="*">*</option>
+                    </select>
+
+
+                    <input type="text" id="destinatario_edit" class="modal-field" placeholder="Destinatário" required>
+
+                    <!-- caso seja necessário criar mais alguma forma de destinatario cria em options e colocar o value como o nome a ser exibido na apresentação -->
+                    <select name="curso_destinatario" id="curso_destinatario_edit" class="modal-field" required>
+                        <option value="nd" disabled selected>Selecione o Curso do Destinatário</option>
+                        <option value="Administração">Administração</option>
+                        <option value="Agronomia">Agronomia</option>
+                        <option value="Artes Visuais">Artes Visuais</option>
+                        <option value="Ciências Biológicas">Ciências Biológicas</option>
+                        <option value="Ciências Contábeis">Ciências Contábeis</option>
+                        <option value="Direito">Direito</option>
+                        <option value="Educação Física">Educação Física</option>
+                        <option value="Enfermagem">Enfermagem</option>
+                        <option value="Farmácia">Farmácia</option>
+                        <option value="Letras">Letras</option>
+                        <option value="Química">Química</option>
+                        <option value="Pedagogia">Pedagogia</option>
+                        <option value="Sistemas de Informação">Sistemas de Informação</option>
+                        <option value="Técnico em Alimentos">Técnico em Alimentos</option>
+                        <option value="Técnico em Serviços Jurídicos">Técnico em Serviços Jurídicos</option>
+                        <option value="Pós-Graduação em Linguagens Híbridas">Pós-Graduação em Linguagens Híbridas
+                        </option>
+                        <option value="Pós-Graduação em Controladoria">Pós-Graduação em Controladoria e Gestão
+                            Empresarial</option>
+                        <option value="IFPR">IFPR</option>
+                        <option value="Professor(a)">Professor(a)</option>
+                        <option value="Servidor(a)">Servidor(a)</option>
+                        <option value="Colegiado">Colegiado</option>
+                        <option value="Visitantes">Visitantes</option>
+                        <option value="Outros">Outros</option>
+                        <option value="*">*</option>
+                    </select>
+
+                    <div></div>
+
+                    <select name="tipo" id="tipo_edit" class="modal-field">
+                        <option value="nd" disabled selected>Selecione o Tipo</option>
+                        <option value="normal">Normal</option>
+                        <option value="alegre">Alegre</option>
+                        <option value="amorosa">Amorosa</option>
+                        <option value="aviso">Aviso</option>
+                    </select>
+
+
+
+
+                    <textarea id="msg_edit" name="msg" class="modal-field msg_campo" placeholder="Digite sua mensagem..."
+                        rows="5" cols="33" onblur="validaMsg()"></textarea>
+                </form>
+                <div class="aviso_de_mensagem">
+                    <p>* Seja conciente, não nos responsabilizamos pelas mensagem enviadas.</p>
+                </div>
+                <footer class="modal-footer">
+                    <button id="excluir" class="button red" onclick="deleteDoc()">Excluir</button>
+                    <button id="salvar" class="button green" onclick="alteraCad()">Atualizar</button>
+                    <button id="cancelar" class="button purple" onclick="fechaModalEdit()">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+
+
+        <!--Modal Edit-->
+        <div class="modal" id="modalAlert">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>ALERTA </h2>
+                    <div class="modal-close" id="" onclick="closeAlert()">X</div>
+                </header>
+
+                <div id="tituloAlert">-</div>
+                <div id="msgAlert">-</div>
+                
+                <footer class="modal-footer">
+                    <button id="cancelar" class="button red" onclick="closeAlert()">Fechar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        2023 - Solução - Apps e Software
+    </footer>
+
+
+    <!-- 
+        Chamada dos scripts, bibliotecas necessária para o codigo rodar 
+        OBS: todas as bibliotecas também estão baixada na pasta biblioteca, 
+        caso seja necessário se a rede tiver bloqueios ou não encontrar tais.
+    -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+    <script src="bibliotecas/jquery.js"></script>
+    <script src="bibliotecas/jquery.mask.min.js"></script>
+    <script src="bibliotecas/jquery.popper.min.js"></script>
+    <script type="text/javascript" src="bibliotecas/dataTables.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

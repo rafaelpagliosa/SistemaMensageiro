@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/POMBO.png" type="image/x-icon" />
+    <title>Mensageiro - Apresentação</title>
+
+    <!-- estilo da apresentação caso seja necessário ajsutes-->
+    <link rel="stylesheet" href="css/apresentacao.css">
+
+    <!-- importação do bootstrap para ser utilizado no codigo-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- seção do carousel exebição da propaganda-->
+    <section id="sliderprod">
+        <div class="ajusta-height-slide">
+            <div id="carouselExampleInterval" class="carousel slide carousel-inicial" data-bs-ride="carousel">
+                <div class="carousel-inner carousel-ajuste">
+
+                    <!-- 
+                        caso seja necessário mudar o tempo de exebição da propaganda para trocar mais rapido ou mais de vagar
+                        se altera esse numero depois de data-bs-interval, assim como no caso do JS aqui também é em milissegundo
+
+                        <div class="carousel-item" data-bs-interval="100000" class="d-block w-100"><video autoplay muted
+                            loop id="video_slider" class="video-screen" src="videos/video_ifpr_ok.mp4"></video></div>
+                    -->
+                    <div class="carousel-item active" data-bs-interval="20000"> <img id="image"
+                            src="img/tema-defalt-transicao.png" class="d-block w-100"> </div>
+                </div>
+
+                <!-- Comandos para controle do carousel, foram ocultados no css-->
+                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+                        class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span> <span
+                        class="visually-hidden">Next</span> </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Texto em forma de letreiro na apresentação texto que fica "correndo"-->
+    <div class="marquee">
+        <marquee>Software Mensageiro </marquee>
+    </div>
+
+    <!-- Apresentação da Mensagens "-->
+    <div class="apresentacao tipo_amorosa tipo_alegre tipo_aviso tipo_normal" id="apresentacao">
+        <div class="mensagem">
+
+            <!-- 
+                Tabela da apresentação, ela ja vem com dados pre definidos caso haja alguma demora para vir os dados do banco
+                ela vai ter alguma coisa para ser exebido
+            -->
+            <table class="tb_dados">
+                <tr>
+                    <td>Nº: &nbsp<span id="pos" class="id_span">0</span></td>
+                    <td>&nbsp &nbsp &nbsp</td>
+                    <td>Id: &nbsp<span id="id" class="id_span">SI</span></td>
+                </tr>
+            </table>
+
+            <table class="tb_dados">
+                <tr>
+                    <td class="td_remetente">De: <span id="remetente" class="remetente">BSI</span></td>
+                    <td>Curso: &nbsp<span id="curso_remetente" class="curso_remetente">Sistemas de Informação</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_destinatario">Para: <span id="destinatario" class="destinatario">Visitantes</span>
+                    </td>
+                    <td>Curso: &nbsp<span id="curso_destinatario" class="curso_destinatario">IFPR Palmas</span></td>
+                </tr>
+                <tr class="tr_ajuste_msg"></tr>
+            </table>
+            <table width="74%">
+                <tr>
+                    <td>Mensagem: &nbsp</td>
+                </tr>
+                <tr>
+                    <td id="msg" class="msg">Ficamos felizes com a sua presença. Seja bem-vindo! 🙌</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Avisos aqui caso for necessario trocar a sala de cadastro pode se alterar diretamento no fonte"-->
+        <div class="aviso">
+            <p>Gostaria de enviar alguma mensagem? Dirija-se até nossos totens e crie a sua!
+            </p>
+            <p>Gostou da idéia? Registre este momento e nos marque no Intagram @bsi_ifpr_palmas</p>
+        </div>
+    </div>
+
+</body>
+
+<!-- 
+Chamada dos scripts, bibliotecas necessária para o codigo rodar 
+OBS: todas as bibliotecas também estão baixada na pasta biblioteca, 
+caso seja necessário se a rede tiver bloqueios ou não encontrar tais.
+"-->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-database.js"></script>
+<script src="bibliotecas/jquery.js"></script>
+<script src="bibliotecas/jquery.mask.min.js"></script>
+<script src="bibliotecas/jquery.popper.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="apresentacao.js"></script>
+
+</html>
